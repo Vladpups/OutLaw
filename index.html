@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Outlaw Minecraft Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Подключение шрифтов Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Подключение Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Подключение AOS (Animate On Scroll) для анимаций -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Outlaw Minecraft Server Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="game.html">Игровой Процесс</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="#about">О Нас</a></li>
+                <li><a href="#rules">Правила</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero-секция с слайдером -->
+    <section class="hero-section">
+        <div class="slider">
+            <!-- Слайды -->
+            <div class="slide fade">
+                <img src="images/slide1.png" alt="Эмигранты — Нью-Йоркский Порт">
+                <div class="text">Эмигранты — Нью-Йоркский Порт</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/slide2.png" alt="Мексиканцы — Пустыня">
+                <div class="text">Мексиканцы — Пустыня</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/slide3.png" alt="Южные Штаты — Ранчо">
+                <div class="text">Южные Штаты — Ранчо</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/slide4.png" alt="Северные Штаты — Вокзал">
+                <div class="text">Северные Штаты — Вокзал</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/slide5.png" alt="Индейцы — Низины">
+                <div class="text">Индейцы — Низины</div>
+            </div>
+
+            <!-- Кнопки "Вперед"/"Назад" -->
+            <a class="prev" onclick="previousSlide()">&#10094;</a>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+
+            <!-- Точки навигации -->
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(0)"></span> 
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Секция "О нас" -->
+        <section id="about" data-aos="fade-up">
+            <div class="container">
+                <h2>О Нас</h2>
+                <p>Добро пожаловать на сервер Outlaw Minecraft! Здесь вы найдете уникальный игровой опыт в духе Дикого Запада. Выберите свою сторону и отправляйтесь в захватывающее приключение.</p>
+            </div>
+        </section>
+
+        <!-- Секция особенностей -->
+        <section class="features" data-aos="fade-up">
+            <div class="container">
+                <h2>Особенности Сервера</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-hat-cowboy"></i>
+                        <h3>Уникальные Фракции</h3>
+                        <p>Присоединяйтесь к одной из пяти фракций и повлияйте на судьбу Дикого Запада.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-horse"></i>
+                        <h3>Транспорт и Лошади</h3>
+                        <p>Используйте лошадей и другие виды транспорта для путешествий по обширным территориям.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-gun"></i>
+                        <h3>Оружие и Снаряжение</h3>
+                        <p>Огромный выбор оружия и снаряжения, соответствующего эпохе.</p>
+                    </div>
+                    <!-- Добавьте другие особенности по необходимости -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция правил -->
+        <section id="rules" data-aos="fade-up">
+            <div class="container">
+                <h2>Правила Сервера</h2>
+                <ul>
+                    <li>Запрещены читы и модификации, дающие преимущество.</li>
+                    <li>Гриферство строго запрещено и карается баном.</li>
+                    <li>Оскорбления и спам недопустимы.</li>
+                    <li>Внутриигровые конфликты должны решаться в духе ролевой игры.</li>
+                    <li>Серьезные нарушения караются администрацией.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер сайта -->
+    <footer data-aos="fade-up">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <!-- Добавьте другие социальные сети по необходимости -->
+            </div>
+            <div class="contact-form">
+                <h3>Свяжитесь с нами</h3>
+                <form id="footerContactForm">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш Email" required>
+                    <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+            <div class="newsletter">
+                <h3>Подписка на Новости</h3>
+                <form id="newsletterForm">
+                    <input type="email" name="email" placeholder="Ваш Email" required>
+                    <button type="submit">Подписаться</button>
+                </form>
+            </div>
+        </div>
+        <p>&copy; 2024 Outlaw Minecraft Server. Все права защищены.</p>
+    </footer>
+
+    <!-- Модальное окно для изображений -->
+    <!-- (Если используется для галереи или других целей) -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTopBtn" title="Наверх">&#8679;</button>
+
+    <!-- Подключение скриптов -->
+    <!-- Подключение AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Подключение Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Ваши скрипты -->
+    <script src="js/scripts.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlaw - Контакты</title>
+    <!-- Подключение индивидуального CSS -->
+    <link rel="stylesheet" href="css/contact.css">
+    <!-- Подключение шрифтов Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Подключение Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVdQp8xC+YmiRmaCYSmJ+I4pK+ZqZj0i4lDRFGjUXeI3zUd9k+vI5DChbaTsttjX+rEzFmiRdFZPNIf//d1fug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Подключение AOS (Animate On Scroll) для анимаций -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-/VhSju5abGe1wFsR1qVX9qJ8eCNjM2uPQjR6G5BtE82xuhP+5ws8XkY2zHCcw8sz/9KzSw5XgYr8YzK5ZP+Gow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Outlaw Logo" loading="lazy">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="game.html">Игровой Процесс</a></li>
+                <li><a href="contact.html" class="active">Контакты</a></li>
+                <li><a href="#about">О Нас</a></li>
+                <li><a href="#rules">Правила</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero-секция -->
+    <section class="contact-hero" data-aos="fade-in">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Свяжитесь с Нами</h1>
+            <p>Есть вопросы? Напишите нам или присоединяйтесь к нашему Discord-серверу!</p>
+        </div>
+    </section>
+
+    <!-- Секция Контактной Формы -->
+    <section class="contact-form-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Отправьте нам сообщение</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Ваше Имя</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Ваш Email</label>
+                    <input type="email" id="email" name="email" placeholder="Введите ваш Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваше Сообщение</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Введите ваше сообщение" required></textarea>
+                </div>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Секция Discord -->
+    <section class="discord-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Присоединяйтесь к нашему Discord!</h2>
+            <a href="https://discord.gg/your-discord-link" class="discord-button">
+                <i class="fab fa-discord"></i> Вступить в Discord
+            </a>
+            <!-- Вставка Discord-виджета (опционально) -->
+            <div class="discord-widget">
+                <iframe src="https://discord.com/widget?id=YOUR_SERVER_ID&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Социальных Сетей -->
+    <section class="social-media-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Наши Социальные Сети</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <!-- Добавьте другие социальные сети по необходимости -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер сайта -->
+    <footer id="rules" data-aos="fade-up">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="contact-form">
+                <h3>Свяжитесь с нами</h3>
+                <form>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Ваш Email" required>
+                    <textarea placeholder="Ваше сообщение" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+            <div class="rules">
+                <h3>Правила Сервера</h3>
+                <ul>
+                    <li>Запрещены читы и модификации, дающие преимущество.</li>
+                    <li>Гриферство строго запрещено и карается баном.</li>
+                    <li>Оскорбления и спам недопустимы.</li>
+                    <li>Внутриигровые конфликты должны решаться в духе ролевой игры.</li>
+                    <li>Серьезные нарушения караются администрацией.</li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 Outlaw Minecraft Server. Все права защищены.</p>
+    </footer>
+
+    <!-- Модальное окно Галереи (если используется) -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTopBtn" title="Наверх">&#8679;</button>
+
+    <!-- Подключение Font Awesome, AOS и скриптов -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-/VhSju5abGe1wFsR1qVX9qJ8eCNjM2uPQjR6G5BtE82xuhP+5ws8XkY2zHCcw8sz/9KzSw5XgYr8YzK5ZP+Gow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

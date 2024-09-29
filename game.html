@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlaw - Игровой Процесс</title>
+    <link rel="stylesheet" href="css/game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-/VhSju5abGe1wFsR1qVX9qJ8eCNjM2uPQjR6G5BtE82xuhP+5ws8XkY2zHCcw8sz/9KzSw5XgYr8YzK5ZP+Gow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Outlaw Logo" loading="lazy">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="game.html" class="active">Игровой Процесс</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="#about">О Нас</a></li>
+                <li><a href="#rules">Правила</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero" data-aos="fade-in">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Игровой Процесс</h1>
+            <p>Погрузитесь в захватывающий мир Дикого Запада с уникальными механиками и ролями.</p>
+        </div>
+    </section>
+
+    <section class="game-info" id="about" data-aos="fade-up">
+        <div class="container">
+            <h2>Геймплей и Механики</h2>
+            <div class="game-details">
+                <div class="game-section" data-aos="zoom-in">
+                    <h3>Выживание</h3>
+                    <p>Игроки собирают ресурсы, строят дома, создают оружие, ищут пищу и воду, чтобы выжить в суровых условиях Дикого Запада.</p>
+                </div>
+                <div class="game-section" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Экономика</h3>
+                    <p>Торговля между игроками, создание предприятий, управление финансами и развитие собственного бизнеса.</p>
+                </div>
+                <div class="game-section" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>PvP и PvE</h3>
+                    <p>Сражения с другими игроками и монстрами, захват территорий и ресурсов, участие в битвах за контроль над регионами.</p>
+                </div>
+                <div class="game-section" data-aos="zoom-in" data-aos-delay="300">
+                    <h3>Крафт</h3>
+                    <p>Создание разнообразных предметов, включая оружие, броню, инструменты и мебель для обустройства домов.</p>
+                </div>
+                <div class="game-section" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>Строительство</h3>
+                    <p>Свободное возведение построек с ограничениями в определенных зонах, проектирование уникальных сооружений.</p>
+                </div>
+                <div class="game-section" data-aos="zoom-in" data-aos-delay="500">
+                    <h3>Социальные Взаимодействия</h3>
+                    <p>Создание альянсов, выполнение квестов, участие в ролевых событиях и развитие своей истории на сервере.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="start-locations" data-aos="fade-up">
+        <div class="container">
+            <h2>Стартовые Локации</h2>
+            <div class="locations-grid">
+                <div class="location-card" data-aos="zoom-in">
+                    <img src="images/new_york_port.png" alt="Эмигранты" loading="lazy">
+                    <h3>Эмигранты</h3>
+                    <p>Нью-Йоркский порт</p>
+                    <div class="starter-pack">
+                        <p>1 золотой слиток, 4 печеные картофелины, изумруд.</p>
+                    </div>
+                </div>
+                <div class="location-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/desert.png" alt="Мексиканцы" loading="lazy">
+                    <h3>Мексиканцы</h3>
+                    <p>Пустыня</p>
+                    <div class="starter-pack">
+                        <p>4 хлеба, железная мотыга.</p>
+                    </div>
+                </div>
+                <div class="location-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/ranch.png" alt="Южные штаты" loading="lazy">
+                    <h3>Южные Штаты</h3>
+                    <p>Ранчо</p>
+                    <div class="starter-pack">
+                        <p>2 шерсти, золотая мотыга, 7 морковок.</p>
+                    </div>
+                </div>
+                <div class="location-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/train_station.png" alt="Северные штаты" loading="lazy">
+                    <h3>Северные Штаты</h3>
+                    <p>Вокзал</p>
+                    <div class="starter-pack">
+                        <p>Часы, 2 золотых слитка, стейк.</p>
+                    </div>
+                </div>
+                <div class="location-card" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="images/lowlane.png" alt="Индейцы" loading="lazy">
+                    <h3>Индейцы</h3>
+                    <p>Низины</p>
+                    <div class="starter-pack">
+                        <p>Лук, 2 отравленные стрелы, 4 сырых говядины.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="rules" data-aos="fade-up">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="contact-form">
+                <h3>Свяжитесь с нами</h3>
+                <form>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Ваш Email" required>
+                    <textarea placeholder="Ваше сообщение" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+            <div class="rules">
+                <h3>Правила Сервера</h3>
+                <ul>
+                    <li>Запрещены читы и модификации, дающие преимущество.</li>
+                    <li>Гриферство строго запрещено и карается баном.</li>
+                    <li>Оскорбления и спам недопустимы.</li>
+                    <li>Внутриигровые конфликты должны решаться в духе ролевой игры.</li>
+                    <li>Серьезные нарушения караются администрацией.</li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 Outlaw Minecraft Server. Все права защищены.</p>
+    </footer>
+
+    <!-- Font Awesome для иконок -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-/VhSju5abGe1wFsR1qVX9qJ8eCNjM2uPQjR6G5BtE82xuhP+5ws8XkY2zHCcw8sz/9KzSw5XgYr8YzK5ZP+Gow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
