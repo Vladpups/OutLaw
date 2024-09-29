@@ -1,0 +1,496 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400&display=swap');
+
+/* CSS Variables для удобства управления цветовой схемой и повторяющимися значениями */
+:root {
+    --primary-color: #b0b0b0;
+    --secondary-color: #e0e0e0;
+    --background-color: #1c1c1c;
+    --card-background: rgba(50, 50, 50, 0.8);
+    --card-hover-background: rgba(80, 80, 80, 0.9);
+    --text-color: #e0e0e0;
+    --link-hover-color: #e0e0e0;
+    --overlay-color: rgba(0, 0, 0, 0.6);
+    --modal-background: rgba(0,0,0,0.9);
+    --transition-speed: 0.3s;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Общие Стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-image: url('../images/background-texture.jpg'); /* Убедитесь, что путь к изображению верный */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Стили ссылок */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Стили шапки */
+header {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #333;
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    width: 150px;
+    transition: transform var(--transition-speed);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Стили навигации */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Секция Hero */
+.page-hero {
+    position: relative;
+    height: 60vh;
+    background-image: url('../images/hero-background.jpg'); /* Замените на ваше изображение */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Секция Игровой Процесс */
+.game-info {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+
+.game-info .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.game-info h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.game-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.game-section {
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    transition: transform var(--transition-speed), background var(--transition-speed);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: fadeInUp 2s;
+}
+
+.game-section:hover {
+    transform: translateY(-10px);
+    background: var(--card-hover-background);
+}
+
+.game-section h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.game-section p {
+    font-size: 1em;
+    color: #d0d0d0;
+}
+
+/* Секция Стартовых Локаций */
+.start-locations {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+
+.start-locations .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.start-locations h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.locations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.location-card {
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform var(--transition-speed), background var(--transition-speed);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeInUp 2s;
+}
+
+.location-card:hover {
+    transform: translateY(-10px);
+    background: var(--card-hover-background);
+}
+
+.location-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform var(--transition-speed);
+}
+
+.location-card img:hover {
+    transform: scale(1.05);
+}
+
+.location-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.location-card p {
+    font-size: 1em;
+    color: #d0d0d0;
+    margin-bottom: 10px;
+}
+
+.starter-pack {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #e0e0e0;
+}
+
+/* Футер */
+footer {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.social-media {
+    flex: 1 1 200px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: var(--primary-color);
+    font-size: 1.8em;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.social-media a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.contact-form {
+    flex: 1 1 300px;
+}
+
+.contact-form h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #b0b0b0;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: #121212;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+.contact-form button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.rules {
+    flex: 1 1 200px;
+}
+
+.rules h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.rules ul {
+    list-style: none;
+    text-align: left;
+}
+
+.rules ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #d0d0d0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.rules ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media,
+    .contact-form,
+    .rules {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .game-details,
+    .locations-grid {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .page-hero {
+        height: 40vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .game-info h2,
+    .start-locations h2,
+    footer h3 {
+        font-size: 2.2em;
+    }
+
+    .game-section,
+    .location-card,
+    .contact-form,
+    .rules {
+        width: 90%;
+    }
+
+    .location-card img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    .game-section h3,
+    .rules h3 {
+        font-size: 1.6em;
+    }
+
+    .game-section p,
+    .rules ul li {
+        font-size: 0.9em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 95%;
+    }
+}

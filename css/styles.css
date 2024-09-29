@@ -1,0 +1,540 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400&display=swap');
+
+/* CSS Переменные для согласованного цветового оформления */
+:root {
+    --primary-color: #b0b0b0; /* Основной цвет */
+    --secondary-color: #e0e0e0; /* Вторичный цвет */
+    --background-color: #1c1c1c; /* Фоновый цвет страницы */
+    --card-background: #1c1c1c; /* Фон карточек */
+    --card-hover-background: rgba(80, 80, 80, 0.9); /* Фон карточек при наведении */
+    --text-color: #e0e0e0; /* Основной цвет текста */
+    --link-hover-color: #e0e0e0; /* Цвет ссылок при наведении */
+    --overlay-color: rgba(0, 0, 0, 0.6); /* Цвет оверлея */
+    --modal-background: rgba(0,0,0,0.9); /* Фон модального окна */
+    --transition-speed: 0.3s; /* Скорость перехода для анимаций */
+    --font-family: 'Roboto', sans-serif; /* Семейство шрифтов */
+}
+
+/* Общие Стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-image: url('../images/background-texture.jpg'); /* Убедитесь, что путь к изображению верный */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Стили ссылок */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-shadow: 0 0 10px var(--link-hover-color);
+}
+
+/* Шапка (Header) */
+header {
+    background: rgba(28, 28, 28, 0.85);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #333;
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    width: 150px;
+    transition: transform var(--transition-speed);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Навигационное Меню */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Hero-секция с слайдером */
+.hero-section {
+    position: relative;
+}
+
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 1.5em;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+
+/* Кнопки "Вперед"/"Назад" */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 24px;
+    transition: background-color var(--transition-speed);
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Точки навигации */
+.dots {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color var(--transition-speed);
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Анимация плавного появления */
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Основной контент */
+main {
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+/* Секция "О нас" */
+#about {
+    background: var(--card-background);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#about p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Секция особенностей */
+.features {
+    background: var(--card-background);
+    padding: 60px 20px;
+}
+
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.feature-item {
+    flex: 1 1 250px;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: color var(--transition-speed);
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.feature-item p {
+    font-size: 1em;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.feature-item:hover i {
+    color: var(--secondary-color);
+}
+
+/* Секция правил */
+#rules {
+    background: var(--card-background);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#rules ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#rules ul li {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    position: relative;
+    padding-left: 25px;
+}
+
+#rules ul li::before {
+    content: "\2022";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+}
+
+/* Футер */
+footer {
+    background: var(--card-background);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.social-media {
+    flex: 1 1 200px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: var(--primary-color);
+    font-size: 2em;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.social-media a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.contact-form, .newsletter {
+    flex: 1 1 300px;
+}
+
+.contact-form h3, .newsletter h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.contact-form form, .newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input, .contact-form textarea, .newsletter input {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1em;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder, .newsletter input::placeholder {
+    color: #b0b0b0;
+}
+
+.contact-form button, .newsletter button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: #121212;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+.contact-form button:hover, .newsletter button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #b0b0b0;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-background);
+    animation: fadeInModal 0.5s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation: zoomIn 0.6s;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color var(--transition-speed);
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Кнопка "Наверх" */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: #121212;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Анимации */
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media,
+    .contact-form,
+    .newsletter {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .feature-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .text {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 2.2em;
+    }
+
+    .feature-item {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .text {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .newsletter input {
+        width: 100%;
+    }
+
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .prev, .next {
+        padding: 10px;
+        font-size: 18px;
+    }
+}
