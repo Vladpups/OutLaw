@@ -1,12 +1,12 @@
 /* Импорт шрифтов */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400&display=swap');
 
-/* CSS Variables для удобства управления цветовой схемой и повторяющимися значениями */
+/* CSS Переменные для удобства управления цветовой схемой и повторяющимися значениями */
 :root {
     --primary-color: #b0b0b0;
     --secondary-color: #e0e0e0;
     --background-color: #1c1c1c;
-    --card-background: rgba(50, 50, 50, 0.8);
+    --card-background: #1c1c1c;
     --card-hover-background: rgba(80, 80, 80, 0.9);
     --text-color: #e0e0e0;
     --link-hover-color: #e0e0e0;
@@ -46,13 +46,13 @@ a {
 }
 
 a:hover {
-    color: var(--secondary-color);
-    text-shadow: 0 0 10px var(--secondary-color);
+    color: var(--link-hover-color);
+    text-shadow: 0 0 10px var(--link-hover-color);
 }
 
 /* Стили шапки */
 header {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(28, 28, 28, 0.85);
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
@@ -97,8 +97,8 @@ nav ul li a.active {
 /* Секция Hero */
 .page-hero {
     position: relative;
-    height: 60vh;
-    background-image: url('../images/hero-background.jpg'); /* Замените на ваше изображение */
+    height: 50vh;
+    background-image: url('../images/game-hero.jpg'); /* Замените на ваше изображение */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -140,7 +140,7 @@ nav ul li a.active {
 
 /* Секция Игровой Процесс */
 .game-info {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--card-background);
     padding: 60px 20px;
     text-align: center;
     animation: fadeIn 2s;
@@ -166,18 +166,34 @@ nav ul li a.active {
 }
 
 .game-section {
-    background: var(--card-background);
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     width: 300px;
     transition: transform var(--transition-speed), background var(--transition-speed);
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     animation: fadeInUp 2s;
+    position: relative;
+    overflow: hidden;
 }
 
 .game-section:hover {
     transform: translateY(-10px);
     background: var(--card-hover-background);
+}
+
+.game-section img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform var(--transition-speed);
+}
+
+.game-section img:hover {
+    transform: scale(1.05);
 }
 
 .game-section h3 {
@@ -189,11 +205,12 @@ nav ul li a.active {
 .game-section p {
     font-size: 1em;
     color: #d0d0d0;
+    line-height: 1.4;
 }
 
 /* Секция Стартовых Локаций */
 .start-locations {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--card-background);
     padding: 60px 20px;
     text-align: center;
     animation: fadeIn 2s;
@@ -219,7 +236,7 @@ nav ul li a.active {
 }
 
 .location-card {
-    background: var(--card-background);
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     width: 250px;
@@ -227,6 +244,7 @@ nav ul li a.active {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     position: relative;
     animation: fadeInUp 2s;
+    overflow: hidden;
 }
 
 .location-card:hover {
@@ -381,6 +399,79 @@ footer {
     color: var(--primary-color);
 }
 
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-background);
+    animation: fadeInModal 0.5s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation: zoomIn 0.6s;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color var(--transition-speed);
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Кнопка "Наверх" */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: #121212;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
 /* Анимации */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -403,8 +494,22 @@ footer {
     to { opacity: 1; transform: translateX(0); }
 }
 
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
 /* Адаптивность */
 @media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -421,6 +526,12 @@ footer {
     .game-details,
     .locations-grid {
         justify-content: center;
+    }
+
+    .game-section,
+    .location-card {
+        width: 100%;
+        max-width: 500px;
     }
 }
 
@@ -492,5 +603,15 @@ footer {
     .contact-form input,
     .contact-form textarea {
         width: 95%;
+    }
+
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .prev, .next {
+        padding: 10px;
+        font-size: 18px;
     }
 }
