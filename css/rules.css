@@ -1,0 +1,445 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400&display=swap');
+
+/* CSS Переменные для управления цветовой схемой и повторяющимися значениями */
+:root {
+    --primary-color: #b0b0b0; /* Основной цвет */
+    --secondary-color: #e0e0e0; /* Вторичный цвет */
+    --background-color: #1c1c1c; /* Фоновый цвет страницы */
+    --card-background: #1c1c1c; /* Фон карточек */
+    --card-hover-background: rgba(80, 80, 80, 0.9); /* Фон карточек при наведении */
+    --text-color: #e0e0e0; /* Основной цвет текста */
+    --link-hover-color: #e0e0e0; /* Цвет ссылок при наведении */
+    --overlay-color: rgba(0, 0, 0, 0.6); /* Цвет оверлея */
+    --modal-background: rgba(0,0,0,0.9); /* Фон модального окна */
+    --transition-speed: 0.3s; /* Скорость перехода для анимаций */
+    --font-family: 'Roboto', sans-serif; /* Семейство шрифтов */
+}
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-image: url('../images/background-texture.jpg'); /* Убедитесь, что путь к изображению верный */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Стили ссылок */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-shadow: 0 0 10px var(--link-hover-color);
+}
+
+/* Стили шапки */
+header {
+    background: rgba(28, 28, 28, 0.85);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #333;
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.6s ease-out;
+}
+
+.logo img {
+    width: 150px;
+    transition: transform var(--transition-speed);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Стили навигации */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+    position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Hero-секция */
+.page-hero {
+    position: relative;
+    height: 50vh;
+    background-image: url('../images/rules-hero.jpg'); /* Замените на ваше изображение */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero-content h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Секция правил */
+.rules-section {
+    background: var(--card-background);
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rules-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.rules-section h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.rules-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 50px;
+    height: 4px;
+    background: var(--link-hover-color);
+    transform: translateX(-50%);
+}
+
+.rules-list {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.rules-list li {
+    margin-bottom: 30px;
+    font-size: 1em;
+    color: #d0d0d0;
+    position: relative;
+    padding-left: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+.rules-list li:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.rules-list li:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+.rules-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    color: var(--secondary-color);
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+    border: 1px solid var(--primary-color);
+}
+
+.rules-list li strong {
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.rules-list li p {
+    margin-left: 0;
+    line-height: 1.6;
+}
+
+/* Анимации */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Футер */
+footer {
+    background: rgba(28, 28, 28, 0.85);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.social-media {
+    flex: 1 1 200px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: var(--primary-color);
+    font-size: 1.8em;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.social-media a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2) rotate(360deg);
+}
+
+.contact-form,
+.newsletter {
+    flex: 1 1 300px;
+}
+
+.contact-form h3,
+.newsletter h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    position: relative;
+}
+
+.contact-form h3::after,
+.newsletter h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 40px;
+    height: 3px;
+    background: var(--link-hover-color);
+    transform: translateX(-50%);
+}
+
+.contact-form form,
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea,
+.newsletter input {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1em;
+    transition: background var(--transition-speed);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.newsletter input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder,
+.newsletter input::placeholder {
+    color: #b0b0b0;
+}
+
+.contact-form button,
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: #121212;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+    margin-top: 10px;
+}
+
+.contact-form button:hover,
+.newsletter button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #b0b0b0;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media,
+    .contact-form,
+    .newsletter {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .rules-section h2 {
+        font-size: 2.5em;
+    }
+
+    .contact-form h3,
+    .newsletter h3 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .rules-section h2 {
+        font-size: 2em;
+    }
+
+    .rules-list li {
+        padding-left: 30px;
+    }
+
+    .rules-list li::before {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 0.9em;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .newsletter input {
+        width: 100%;
+    }
+}
